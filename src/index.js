@@ -9,8 +9,7 @@ app.get('/health', async (req, res) => {
   try {
     const { body } = await osClient.cluster.health();
     res.json({ status: 'ok', opensearch: body.status });
-  } 
-  catch (err) {
+  } catch (err) {
     res.status(500).json({ status: 'error', message: err.message });
   }
 });
