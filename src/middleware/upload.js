@@ -1,9 +1,9 @@
 const multer = require('multer');
 
-const storage = multer.memoryStorage(); // store file as Buffer in req.file.buffer
+const storage = multer.memoryStorage(); // store file as buffer in req.file.buffer
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'application/pdf') { // MIME 
+  if (file.mimetype === 'application/pdf') { // 
     cb(null, true); // no error and accept the file
   } else {
     // cb(error) means reject and pass the error downstream
